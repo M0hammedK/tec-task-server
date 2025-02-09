@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@types/express':
+        specifier: ^5.0.0
+        version: 5.0.0
       cors:
         specifier: ^2.8.5
         version: 2.8.5
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
+      express:
+        specifier: ^4.21.2
+        version: 4.21.2
       json-server:
         specifier: ^0.16.1
         version: 0.16.3
