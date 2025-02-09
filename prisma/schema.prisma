@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator json_server {
+  provider       = "prisma-json-server-generator"
+  outputFileName = "db.json"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./db.json"
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  text      String
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
