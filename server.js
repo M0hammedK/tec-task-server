@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
-const middleware = jsonServer.defaults({noCors:true});
+const middleware = jsonServer.defaults();
 const port = process.env.PORT || 4000;
 
 server.use(cors({origin:"*", credentials:true}))
