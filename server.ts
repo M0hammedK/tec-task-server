@@ -7,8 +7,15 @@ const middleware = jsonServer.defaults({noCors:true});
 const port = process.env.PORT || 4000;
 
 // Apply cors middleware directly to the server
-server.use(cors());
-
+server.use(cors({
+  origin: (origin:any, callback:any) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    // Allow all origins by echoing back the origin header
+    return callback(null, true);
+  },
+  credentials: true
+}));
 
 server.use(middleware); // Add default middleware (json-server)
 server.use(router); // Add routes from db.json
