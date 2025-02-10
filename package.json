@@ -12,6 +12,7 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "json-server": "^0.16.1",
     "nodemon": "^3.1.9"
   }
