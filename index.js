@@ -17,6 +17,10 @@ server.use((req, res, next) => {
   next();
 });
 
+server.options("*", (req, res) => {
+  res.status(200).end();
+});
+
 server.use(router);
 
 server.listen(4000, () => {
